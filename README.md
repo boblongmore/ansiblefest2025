@@ -1,9 +1,10 @@
 # ansiblefest2025
 
 ## Using Ansible, OpenShift, and Servicenow to manage the complete lifecycle of VMs
-Red Hat OpenShift Virtualiztion for enterprise workloads is a solution that WWT's clients are exploring.
+As WWT clients evaluate running virtual machines with OpenShift Virtualization, it is a perfect time to investigate automating the entire lifecycle of a workload. We will demonstrate using Servicenow, Ansible Automation Platform, and OpenShift Virtualization to achieve this goal.
 
-As WWT clients evaluate running virtual machines with OpenShift Virtualization, the complete lifecycle of a machine or an application is in scope for an automated solution. As clients are exploring alternatives to their current virtualization provider, it is not only the virtual machines themselves, but the components in place to provision and maintain those virtual machines that go into the decision process. In this session we will demonstrate how Red Hat OpenShift Virtualization coupled with Ansible Automation Platform provides a seemless user experience for delivering solutions to business units.
+As clients are exploring alternatives to their current virtualization provider, it is not only the virtual machines themselves, but the components in place to provision and maintain those virtual machines that go into the decision process. This session is aimed at automation engineers wanting to apply proven practices to a new technology as well as virtualization engineers looking to streamline delivery of new workloads.
+
 
 The following technologies are in use for this solution demonstration:
 - ServiceNow
