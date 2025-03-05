@@ -10,8 +10,10 @@
   rescue:
     - name: Use Command module to untar
       ansible.builtin.command:
-        cmd: "cd /tmp && tar -xvf {{ src_file }}"
+        chdir: "/tmp"
+        cmd: "tar -xvf {{ src_file }}"
 
     - name: Use Command module to move and rename
       ansible.builtin.command:
-        cmd: "cd /tmp && mv -v {{ src_file[0] | split('.tar')}} {{ extract_to_loc }}/prometheus"
+        chdir: "/tmp"
+        cmd: "mv -v {{ src_file[0] | split('.tar')}} {{ extract_to_loc }}/prometheus"
