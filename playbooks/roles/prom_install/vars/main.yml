@@ -9,3 +9,15 @@ download_loc: "/tmp"
 prom_dirs:
   - "/etc/prometheus"
   - "/var/lib/prometheus"
+
+binary_path: /usr/local/bin
+
+prom_binaries:
+  - "/development/prometheus/prometheus"
+  - "/development/prometheus/promtool"
+
+web_UI_files:
+  - "/development/prometheus/consoles/"
+  - "/development/prometheus/console_libraries/"
+
+web_ui_path: /etc/prometheus
