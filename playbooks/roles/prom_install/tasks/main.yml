@@ -38,6 +38,7 @@
   ansible.builtin.copy:
     src: "{{ item }}"
     dest: "{{ binary_path }}"
+    mode: preserve
     owner: prometheus
     group: prometheus
     remote_src: true
