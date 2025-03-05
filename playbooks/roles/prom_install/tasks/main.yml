@@ -15,52 +15,51 @@
     chdir: "{{ download_loc }}"
     cmd: "tar -xvf {{ src_file }}"
 
-# - name: Use copy to rename file
-#   ansible.builtin.copy:
-#     src: "/development/{{ src_file | split('.tar') | first }}"
-#     dest: "/development/prometheus"
-#     force: true
-#     remote_src: true
-#
-# - name: Create prometheus user
-#   ansible.builtin.user:
-#     name: prometheus
-#     shell: /bin/bash
-#     create_home: no
-#
-# - name: Create directories for prometheus
-#   ansible.builtin.file:
-#     path: "{{ item }}"
-#     state: directory
-#     owner: prometheus
-#     group: prometheus
-#   loop: "{{ prom_dirs }}"
-#
-# - name: Copy binaries to binary path and set the owner
-#   ansible.builtin.copy:
-#     src: "{{ item }}"
-#     dest: "{{ binary_path }}"
-#     owner: prometheus
-#     group: prometheus
-#     remote_src: true
-#     force: true
-#   loop: "{{ prom_binaries }}"
-#
-# - name: Copy prom web UI files and set the owner
-#   ansible.builtin.copy:
-#     src: "{{ item }}"
-#     dest: "{{ web_ui_path }}"
-#     directory_mode: preserve
-#     owner: prometheus
-#     group: prometheus
-#     remote_src: true
-#     force: true
-#   loop: "{{ web_UI_files }}"
-#
-# - name: Set firewalld rules for UI access
-#   ansible.posix.firewalld:
-#       port: 9090/tcp
-#       zone: public
-#       state: enabled
-#       permanent: true
-#
+- name: Use copy to rename file
+  ansible.builtin.copy:
+    src: "/development/{{ src_file | split('.tar') | first }}"
+    dest: "/development/prometheus"
+    force: true
+    remote_src: true
+
+- name: Create prometheus user
+  ansible.builtin.user:
+    name: prometheus
+    shell: /bin/bash
+    create_home: no
+
+- name: Create directories for prometheus
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: prometheus
+    group: prometheus
+  loop: "{{ prom_dirs }}"
+
+- name: Copy binaries to binary path and set the owner
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ binary_path }}"
+    owner: prometheus
+    group: prometheus
+    remote_src: true
+    force: true
+  loop: "{{ prom_binaries }}"
+
+- name: Copy prom web UI files and set the owner
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ web_ui_path }}"
+    directory_mode: preserve
+    owner: prometheus
+    group: prometheus
+    remote_src: true
+    force: true
+  loop: "{{ web_UI_files }}"
+
+- name: Set firewalld rules for UI access
+  ansible.posix.firewalld:
+      port: 9090/tcp
+      zone: public
+      state: enabled
+      permanent: true
