@@ -5,6 +5,7 @@
       ansible.builtin.unarchive:
         src: "/tmp/{{ src_file }}"
         dest: "{{ extract_to_loc }}"
+        remote_src: yes
 
 
   rescue:
@@ -22,4 +23,4 @@
     - name: Use Command module to move and rename
       ansible.builtin.command:
         chdir: "/tmp"
-        cmd: "mv -v {{ src_file | split('.tar')[0]}} {{ extract_to_loc }}/prometheus"
+        cmd: "mv -v {{ src_file | split('.tar') | src_file[0]}} {{ extract_to_loc }}/prometheus"
