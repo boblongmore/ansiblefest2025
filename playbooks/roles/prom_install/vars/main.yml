@@ -24,6 +24,10 @@ web_UI_files:
 
 web_ui_path: /etc/prometheus
 
+# Prometheus Config File
 prom_config_file: ./files/prometheus.yml
-
 prom_config_dest: /etc/prometheus/prometheus.yml
+
+# Prometheus Service
+prom_svc_file: ./files/prometheus.service
+prom_svc_dest: /etc/systemd/system/prometheus.service

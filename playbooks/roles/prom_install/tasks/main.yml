@@ -62,10 +62,22 @@
       state: enabled
       permanent: true
 
-- name: copy prometeus config
+- name: copy prom config
   ansible.builtin.copy:
     src: "{{ prom_config_file }}"
     dest: "{{ prom_config_dest }}"
     owner: prometheus
     group: prometheus
     force: true
+
+- name: copy prom service
+  ansible.builtin.copy:
+    src: "{{ prom_svc_file }}"
+    dest: "{{ prom_svc_dest }}"
+    force: true
+
+- name: Start and enable prometheus service
+  ansible.builtin.service:
+    name: prometheus
+    enabled: true
+    state: started
