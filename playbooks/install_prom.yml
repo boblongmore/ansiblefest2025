@@ -1,0 +1,8 @@
+---
+- name: Install components for Promethueus and Grafana
+  hosts: fedora01
+
+  tasks:
+    - name: Download Prom Package
+      ansible.builtin.include_role:
+        name: download_packages
