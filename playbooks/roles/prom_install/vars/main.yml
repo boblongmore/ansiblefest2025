@@ -1,12 +1,12 @@
 packages:
   - git
 
-prom_package_url: https://github.com/prometheus/prometheus/releases/download/v2.53.0/prometheus-2.53.0.linux-amd64.tar.gz
-# prom_package_url: https://github.com/prometheus/prometheus/releases/download/v3.2.1/prometheus-3.2.1.linux-386.tar.gz
-#src_file: "prometheus-3.2.1.linux-386.tar.gz"
-src_file: "prometheus-2.53.0.linux-amd64.tar.gz"
+# prom_package_url: https://github.com/prometheus/prometheus/releases/download/v2.53.0/prometheus-2.53.0.linux-amd64.tar.gz
+prom_package_url: https://github.com/prometheus/prometheus/releases/download/v3.2.1/prometheus-3.2.1.linux-386.tar.gz
+src_file: "prometheus-3.2.1.linux-386.tar.gz"
+# src_file: "prometheus-2.53.0.linux-amd64.tar.gz"
 extract_to_loc: "/development"
-download_loc: "/development"
+download_loc: "/tmp"
 
 prom_dirs:
   - "/etc/prometheus"
