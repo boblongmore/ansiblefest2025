@@ -1,16 +1,17 @@
 ---
-block:
-  - name: Extract tar into development
-    ansible.builtin.unarchive:
-      src: "{{ src_file }}"
-      dest: "{{ extract_to_loc }}"
+- name: Try to unarchive, then try using command
+  block:
+    - name: Extract tar into development
+      ansible.builtin.unarchive:
+        src: "{{ src_file }}"
+        dest: "{{ extract_to_loc }}"
 
 
-rescue:
-  - name: Use Command module to untar
-    ansible.builtin.command:
-      cmd: "tar -xvf {{ src_file[0] | split(.tar) }}"
+  rescue:
+    - name: Use Command module to untar
+      ansible.builtin.command:
+        cmd: "tar -xvf {{ src_file[0] | split(.tar) }}"
 
-  - name: Use Command module to move and rename
-    ansible.builtin.command:
-      cmd: " mv -v {{ src_file }} {{ extract_to_loc }}/prometheus"
+    - name: Use Command module to move and rename
+      ansible.builtin.command:
+        cmd: " mv -v {{ src_file }} {{ extract_to_loc }}/prometheus"
