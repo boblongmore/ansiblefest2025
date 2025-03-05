@@ -1,8 +1,14 @@
 ---
 - name: Install components for Promethueus and Grafana
   hosts: fedora01
+  vars:
+    src_file: "/tmp/"
+    extract_to_loc:
 
   tasks:
     - name: Download Prom Package
       ansible.builtin.include_role:
         name: download_packages
+    - name: Unarchive and move file
+      ansible.builtin.include_role:
+        name: unarchive
