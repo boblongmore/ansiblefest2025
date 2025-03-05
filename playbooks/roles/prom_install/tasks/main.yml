@@ -61,3 +61,11 @@
       zone: public
       state: enabled
       permanent: true
+
+- name: copy prometeus config
+  ansible.builtin.copy:
+    src: "{{ prom_config_file }}"
+    dest: "{{ prom_config_dest }}"
+    owner: prometheus
+    group: prometheus
+    force: true

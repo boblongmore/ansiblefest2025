@@ -23,3 +23,7 @@ web_UI_files:
   - "/development/prometheus/console_libraries/"
 
 web_ui_path: /etc/prometheus
+
+prom_config_file: ./files/prometheus.yml
+
+prom_config_dest: /etc/prometheus/prometheus.yml
