@@ -7,5 +7,5 @@ extract_to_loc: "/development"
 download_loc: "/tmp"
 
 prom_dirs:
-  - /etc/prometheus
-  - /var/lib/prometheus
+  - "/etc/prometheus"
+  - "/var/lib/prometheus"
