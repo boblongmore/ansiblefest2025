@@ -13,6 +13,7 @@
         msg:
           - "{{ src_file }}"
           - "{{ extract_to_loc }}"
+
     - name: Use Command module to untar
       ansible.builtin.command:
         chdir: "/tmp"
