@@ -1,7 +1,0 @@
-
-packages:
-  - git
-
-package_url: https://github.com/prometheus/prometheus/releases/download/v3.2.1/prometheus-3.2.1.linux-386.tar.gz
-src_file: "prometheus-3.2.1.linux-386.tar.gz"
-extract_to_loc: "/development"

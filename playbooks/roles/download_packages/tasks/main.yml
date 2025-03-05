@@ -1,5 +1,0 @@
----
-- name: Download file from url
-  ansible.builtin.get_url:
-    url: "{{ package_url }}"
-    dest: /tmp

@@ -1,0 +1,30 @@
+---
+- name: Download file from url
+  ansible.builtin.get_url:
+    url: "{{ prom_package_url }}"
+    dest: "{{ download_loc }}"
+
+- name: Extract tar into development
+  ansible.builtin.unarchive:
+    src: "/tmp/{{ src_file }}"
+    dest: "{{ extract_to_loc }}"
+    remote_src: yes
+
+- name: Use Command module to move and rename
+  ansible.builtin.command:
+    chdir: "/development"
+    cmd: "mv -v {{ src_file | split('.tar') | first}} prometheus"
+
+- name: Create prometheus user
+  ansible.builtin.user:
+    name: prometheus
+    shell: /bin/bash
+    create_home: no
+
+- name: Create directories for prometheus
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: prometheus
+    group: prometheus
+  loop: prom_dirs

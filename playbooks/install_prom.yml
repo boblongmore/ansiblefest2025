@@ -3,9 +3,6 @@
   hosts: fedora01
 
   tasks:
-    - name: Download Prom Package
+    - name: Perform Prometheus install
       ansible.builtin.include_role:
-        name: download_packages
-    - name: Unarchive and move file
-      ansible.builtin.include_role:
-        name: unarchive
+        name: prom_install
