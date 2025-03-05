@@ -4,16 +4,16 @@
     url: "{{ prom_package_url }}"
     dest: "{{ download_loc }}"
 
-# - name: Extract tar into development
-#   ansible.builtin.unarchive:
-#     src: "/tmp/{{ src_file }}"
-#     dest: "{{ extract_to_loc }}"
-#     remote_src: yes
+- name: Extract tar into development
+  ansible.builtin.unarchive:
+    src: "/tmp/{{ src_file }}"
+    dest: "{{ extract_to_loc }}"
+    remote_src: yes
 
-- name: Extract prom files
-  ansible.builtin.command:
-    chdir: "{{ download_loc }}"
-    cmd: "tar -xvf {{ src_file }}"
+# - name: Extract prom files
+#   ansible.builtin.command:
+#     chdir: "{{ download_loc }}"
+#     cmd: "tar -xvf {{ src_file }}"
 
 # - name: Use copy to rename file
 #   ansible.builtin.copy:
