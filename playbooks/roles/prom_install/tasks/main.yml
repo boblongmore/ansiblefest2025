@@ -15,6 +15,7 @@
     src: "/development/{{ src_file | split('.tar') | first }}"
     dest: "/development/prometheus"
     force: true
+    remote_src: true
 
 - name: Create prometheus user
   ansible.builtin.user:
