@@ -3,7 +3,7 @@
   block:
     - name: Extract tar into development
       ansible.builtin.unarchive:
-        src: "{{ src_file }}"
+        src: "/tmp/{{ src_file }}"
         dest: "{{ extract_to_loc }}"
 
 
