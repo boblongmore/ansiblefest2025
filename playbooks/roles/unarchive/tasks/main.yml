@@ -1,5 +1,5 @@
 ---
-- name: Extract foo.tgz into /var/lib/foo
+- name: Extract tar into development
   ansible.builtin.unarchive:
     src: "{{ src_file }}"
     dest: "{{ extract_to_loc }}"
