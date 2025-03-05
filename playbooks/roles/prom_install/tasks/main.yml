@@ -17,7 +17,7 @@
 
 - name: Use copy to rename file
   ansible.builtin.copy:
-    src: "/development/{{ src_file | split('.tar') | first }}"
+    src: "{{ download_loc }}/{{ src_file | split('.tar') | first }}"
     dest: "/development/prometheus"
     force: true
     remote_src: true
