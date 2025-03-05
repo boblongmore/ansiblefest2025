@@ -10,10 +10,11 @@
     dest: "{{ extract_to_loc }}"
     remote_src: yes
 
-- name: Use Command module to move and rename
-  ansible.builtin.command:
-    chdir: "/development"
-    cmd: "mv -v {{ src_file | split('.tar') | first}} prometheus"
+- name: Use copy to rename file
+  ansible.builtin.copy:
+    src: "/development/{{ src_file | split('.tar') | first }}"
+    dest: "/development/prometheus"
+    force: true
 
 - name: Create prometheus user
   ansible.builtin.user:
