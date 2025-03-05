@@ -18,7 +18,7 @@
 - name: Use command to rename file
   ansible.builtin.command:
     chdir: "{{ download_loc }}"
-    cmd: "mv {{ src_file | split('.tar') | first }} /development/prometheus"
+    cmd: "mv -f {{ src_file | split('.tar') | first }} /development/prometheus"
 
 - name: Create prometheus user
   ansible.builtin.user:
