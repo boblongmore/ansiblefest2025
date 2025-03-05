@@ -10,7 +10,7 @@
     dest: "{{ extract_to_loc }}"
     remote_src: yes
     extra_opts:
-      - -f
+      - --extract
 
 - name: Use copy to rename file
   ansible.builtin.copy:
