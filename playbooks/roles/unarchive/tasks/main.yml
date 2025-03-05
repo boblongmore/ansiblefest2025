@@ -9,8 +9,8 @@
 
     - name: Use Command module to move and rename
       ansible.builtin.command:
-        chdir: "/tmp"
-        cmd: "mv -v {{ src_file | split('.tar') | first}} {{ extract_to_loc }}/prometheus"
+        chdir: "/development"
+        cmd: "mv -v {{ src_file | split('.tar') | first}} prometheus"
 #
   rescue:
     - name: Print vars
