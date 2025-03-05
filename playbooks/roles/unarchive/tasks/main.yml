@@ -1,5 +1,5 @@
 ---
 - name: Extract tar into development
   ansible.builtin.unarchive:
-    src: "{{ src_file }}"
+    src: "/tmp/prometheus-3.2.1.linux-386.tar.gz"
     dest: "{{ extract_to_loc }}"
