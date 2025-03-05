@@ -15,12 +15,10 @@
     chdir: "{{ download_loc }}"
     cmd: "tar -xvf {{ src_file }}"
 
-- name: Use copy to rename file
-  ansible.builtin.copy:
-    src: "{{ download_loc }}/{{ src_file | split('.tar') | first }}"
-    dest: "/development/prometheus"
-    force: true
-    remote_src: true
+- name: Use command to rename file
+  ansible.builtin.command:
+    chdir: "{{ download_loc }}"
+    cmd: "mv {{ src_file | split('.tar') | first }} /development/prometheus"
 
 - name: Create prometheus user
   ansible.builtin.user:
