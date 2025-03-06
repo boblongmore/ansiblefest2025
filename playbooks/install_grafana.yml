@@ -1,0 +1,8 @@
+---
+- name: Install components for Grafana
+  hosts: fedora01
+
+  tasks:
+    - name: Perform Prometheus install
+      ansible.builtin.include_role:
+        name: grafana_install

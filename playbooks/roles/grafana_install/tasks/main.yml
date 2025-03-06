@@ -1,0 +1,5 @@
+---
+- name: Download file from url
+  ansible.builtin.get_url:
+    url: "{{ graf_package_url }}"
+    dest: "{{ download_loc }}/gpg.key"
