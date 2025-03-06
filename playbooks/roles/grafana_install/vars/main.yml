@@ -5,7 +5,6 @@ key_name: gpg.key
 repo_location: /etc/yum.repos.d/
 
 packages_to_install:
-  - python3-libdnf5
   - grafana
 
 
