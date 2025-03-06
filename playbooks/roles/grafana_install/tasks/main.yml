@@ -33,4 +33,4 @@
     name: "{{ item }}"
     enabled: true
     state: started
-  loop: "{{ packages_to_install }}"
+  loop: "{{ services }}"
