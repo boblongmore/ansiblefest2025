@@ -1,2 +1,8 @@
 graf_package_url: https://rpm.grafana.com/gpg.key
 download_loc: /tmp
+key_name: gpg.key
+
+repo_location: /etc/yum.repos.d/
+
+packages_to_install:
+  - grafana

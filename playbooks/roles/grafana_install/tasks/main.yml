@@ -2,4 +2,35 @@
 - name: Download file from url
   ansible.builtin.get_url:
     url: "{{ graf_package_url }}"
-    dest: "{{ download_loc }}/gpg.key"
+    dest: "{{ download_loc }}/{{ key_name }}"
+
+- name: Import the key via RPM
+  ansible.builtin.rpm_key:
+    state: present
+    key: "{{ download_loc }}/{{ key_name }}"
+
+- name: Create grafana repo
+  ansible.builtin.copy:
+    src: ./files/grafana.repo
+    dest: "{{ repo_location }}/"
+    force: true
+
+- name: Install packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ packages_to_install }}"
+
+- name: Set firewalld rules for access
+  ansible.posix.firewalld:
+      port: 3000/tcp
+      zone: public
+      state: enabled
+      permanent: true
+
+- name: Start and enable services
+  ansible.builtin.service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  loop: "{{ packages_to_install }}"
