@@ -1,0 +1,12 @@
+---
+- name: Create cadvisor container on AAP hosts
+  containers.podman.podman_container:
+    name: cadvisor
+    image: "{{ cadvisor_image }}"
+    volume:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - "8080:8080"

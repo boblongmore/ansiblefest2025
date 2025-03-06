@@ -1,0 +1,8 @@
+---
+- name: Install cadvisor
+  hosts: aac02
+
+  tasks:
+    - name: Perform cadvisor install
+      ansible.builtin.include_role:
+        name: cadvisor_install
