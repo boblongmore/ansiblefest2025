@@ -12,6 +12,6 @@
       - /:/rootfs:ro
       - /var/run:/var/run:rw
       - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
+      - /var/lib/containers:/var/lib/containers:rw
     ports:
       - "8080:8080"
