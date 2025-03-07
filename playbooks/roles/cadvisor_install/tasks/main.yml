@@ -15,3 +15,11 @@
       - /var/lib/containers:/var/lib/containers:rw
     ports:
       - "8090:8090"
+
+
+- name: Set firewalld rules for access
+  ansible.posix.firewalld:
+      port: 8090/tcp
+      zone: public
+      state: enabled
+      permanent: true
