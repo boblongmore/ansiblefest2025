@@ -18,7 +18,7 @@
 
 - name: Add specified repository into sources list
   ansible.builtin.command:
-    cmd: "subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms -y"
+    cmd: "subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms"
 
 - name: Install packages
   ansible.builtin.package:
