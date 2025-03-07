@@ -1,21 +1,25 @@
 ---
 
-- name: Pull cadvisor image
-  containers.podman.podman_image:
-    name: "{{ cadvisor_image }}"
+# - name: Pull cadvisor image
+#   containers.podman.podman_image:
+#     name: "{{ cadvisor_image }}"
+#
+# - name: Create cadvisor container on AAP hosts
+#   containers.podman.podman_container:
+#     name: cadvisor
+#     image: "{{ cadvisor_image }}"
+#     volume:
+#       - /:/rootfs:ro
+#       - /var/run:/var/run:rw
+#       - /sys:/sys:ro
+#       - /var/lib/containers:/var/lib/containers:rw
+#     ports:
+#       - "8090:8090"
 
-- name: Create cadvisor container on AAP hosts
-  containers.podman.podman_container:
-    name: cadvisor
-    image: "{{ cadvisor_image }}"
-    volume:
-      - /:/rootfs:ro
-      - /var/run:/var/run:rw
-      - /sys:/sys:ro
-      - /var/lib/containers:/var/lib/containers:rw
-    ports:
-      - "8090:8090"
-
+- name: Install packages
+  ansible.builtin.package:
+    name: prometheus-podman-exporter
+    state: present
 
 - name: Set firewalld rules for access
   ansible.posix.firewalld:
