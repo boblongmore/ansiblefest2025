@@ -17,9 +17,8 @@
 #       - "8090:8090"
 
 - name: Add specified repository into sources list
-  ansible.builtin.apt_repository:
-    repo: codeready-builder-for-rhel-9-$(arch)-rpms
-    state: present
+  ansible.builtin.command:
+    cmd: "subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms -y"
 
 - name: Install packages
   ansible.builtin.package:
