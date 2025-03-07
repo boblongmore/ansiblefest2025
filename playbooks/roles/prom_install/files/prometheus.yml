@@ -7,3 +7,9 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['192.168.2.32:9090'] # Prometheus Server IP Address
+
+  - job_name: 'aap_node_exporter_metrics'
+    scrape_interval: 5s
+    static_configs:
+      # AAP Server
+      - targets: ['aac02.lab.local:9889']
