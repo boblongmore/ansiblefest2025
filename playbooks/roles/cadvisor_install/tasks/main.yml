@@ -16,6 +16,16 @@
 #     ports:
 #       - "8090:8090"
 
+- name: Add specified repository into sources list
+  ansible.builtin.apt_repository:
+    repo: codeready-builder-for-rhel-9-$(arch)-rpms
+    state: present
+
+- name: Install packages
+  ansible.builtin.package:
+    name:  https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+    state: present
+
 - name: Install packages
   ansible.builtin.package:
     name: prometheus-podman-exporter
