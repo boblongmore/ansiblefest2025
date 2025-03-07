@@ -33,7 +33,7 @@
 
 - name: Set firewalld rules for access
   ansible.posix.firewalld:
-      port: 8090/tcp
+      port: 9882/tcp
       zone: public
       state: enabled
       permanent: true
