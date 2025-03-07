@@ -36,3 +36,7 @@
       zone: public
       state: enabled
       permanent: true
+
+- name: Run prometheus-podman-exporter
+  ansible.builtin.command:
+    cmd: prometheus-podman-exporter
