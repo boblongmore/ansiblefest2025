@@ -1,0 +1,3 @@
+grafana_config_dest: /etc/grafana/provisioning/datasources/prometheus.yaml
+
+prom_server: fedora01.lab.local

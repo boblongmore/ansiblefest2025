@@ -1,0 +1,9 @@
+---
+- name: Update Grafana
+  hosts: fedora01
+  # hosts: localhost
+
+  tasks:
+    - name: Perform Grafana update
+      ansible.builtin.include_role:
+        name: update_grafana_config
