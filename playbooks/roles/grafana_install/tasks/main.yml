@@ -30,6 +30,7 @@
 
 - name: Enable provisioning parameter in grafana.ini
   ansible.builtin.lineinfile:
+    path: /etc/grafana/grafana.ini
     insertafter: ;provisioning = conf/provisioning
     line: provisioning = /etc/grafana/provisioning
 
