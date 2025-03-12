@@ -1,9 +1,9 @@
 ---
-- name: Install components for Promethueus and Grafana
+- name: Update Prometheus
   hosts: fedora01
   # hosts: localhost
 
   tasks:
-    - name: Perform Prometheus install
+    - name: Update Prometheus config
       ansible.builtin.include_role:
         name: update_prom_config
