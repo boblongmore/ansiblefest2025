@@ -1,6 +1,7 @@
 ---
 - name: Install components for Promethueus and Grafana
   hosts: fedora01
+  # hosts: localhost
 
   tasks:
     - name: Perform Prometheus install
