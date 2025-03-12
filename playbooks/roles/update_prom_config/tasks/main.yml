@@ -14,7 +14,3 @@
     name: prometheus
     enabled: true
     state: restarted
-
-- name: Print config file
-  ansible.builtin.debug:
-    msg: "{{ prom_config_file }}"
