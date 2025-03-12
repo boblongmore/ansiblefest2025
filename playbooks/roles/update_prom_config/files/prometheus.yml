@@ -9,7 +9,7 @@ scrape_configs:
       - targets: ['192.168.2.32:9090'] # Prometheus Server IP Address
 
   - job_name: 'aap-metrics'
-    metrics_path: /api/controller/v2/metrics
+    metrics_path: /api/controller/v2/metrics/
     scrape_interval: 10s
     scheme: https
     tls_config:
