@@ -8,10 +8,3 @@
     group: prometheus
     force: true
   notify: restart grafana service
-
-  handlers:
-    - name: Restart grafana service
-      ansible.builtin.service:
-        name: grafana
-        enabled: true
-        state: restarted
