@@ -7,4 +7,4 @@
     owner: prometheus
     group: prometheus
     force: true
-  notify: restart grafana service
+  notify: Restart grafana service
