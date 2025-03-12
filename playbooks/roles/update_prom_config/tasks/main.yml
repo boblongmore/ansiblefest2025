@@ -2,7 +2,7 @@
 
 - name: copy prom config
   ansible.builtin.template:
-    src: "{{ 'prometheus.j2' }}"
+    src:  prometheus.j2
     dest: "{{ prom_config_dest }}"
     owner: prometheus
     group: prometheus
