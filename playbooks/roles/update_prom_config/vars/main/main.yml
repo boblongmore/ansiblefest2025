@@ -1,0 +1,3 @@
+# Prometheus Config File
+prom_config_file: ./files/prometheus.yml
+prom_config_dest: /etc/prometheus/prometheus.yml
