@@ -81,4 +81,4 @@
   ansible.builtin.service:
     name: prometheus
     enabled: true
-    state: started
+    state: restarted
