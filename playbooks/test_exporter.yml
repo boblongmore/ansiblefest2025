@@ -1,0 +1,8 @@
+---
+- name: Test Exporter
+  hosts: localhost
+
+  tasks:
+    - name: Print status message
+      ansible.builtin.debug:
+        msg: "Job has run"
