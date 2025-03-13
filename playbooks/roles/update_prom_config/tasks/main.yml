@@ -7,10 +7,4 @@
     owner: prometheus
     group: prometheus
     force: true
-
-
-- name: restart prometheus service
-  ansible.builtin.service:
-    name: prometheus
-    enabled: true
-    state: restarted
+  notify: Restart prometheus service
