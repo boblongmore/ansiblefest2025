@@ -18,7 +18,7 @@ scrape_configs:
     static_configs:
       - targets: ['aac02.lab.local']
 
-  - job_name: 'aap-metrics'
+  - job_name: 'aap-job-metrics'
     metrics_path: /job_metrics
     scrape_interval: 10s
     scheme: https
