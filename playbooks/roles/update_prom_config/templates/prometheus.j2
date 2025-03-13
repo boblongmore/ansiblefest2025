@@ -17,3 +17,13 @@ scrape_configs:
     bearer_token: "{{ metrics_user_token }}"
     static_configs:
       - targets: ['aac02.lab.local']
+
+  - job_name: 'aap-jobs'
+    metrics_path: /api/controller/v2/jobs/
+    scrape_interval: 10s
+    scheme: https
+    tls_config:
+      insecure_skip_verify: true
+    bearer_token: "{{ metrics_user_token }}"
+    static_configs:
+      - targets: ['aac02.lab.local']
