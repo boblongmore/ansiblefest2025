@@ -26,3 +26,11 @@ scrape_configs:
       insecure_skip_verify: true
     static_configs:
       - targets: ['fedora01.lab.local:5000']
+
+  - job_name: 'rhel9-job-metrics'
+    metrics_path: /metrics
+    scheme: http
+    tls_config:
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ['rhel9-01.lab.local:9100']
