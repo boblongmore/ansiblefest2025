@@ -14,6 +14,9 @@ AAP_URL = os.getenv('aap_server')
 AAP_TOKEN = os.getenv('aap_token')
 JOB_ID = 46 # Replace with your job template ID
 API_ENDPOINT=f"/api/controller/v2/workflow_job_templates/{JOB_ID}/workflow_jobs/"
+
+# Constants that set the costs and time for calculations
+# These are estimates and should be adjusted based on your specific situation
 EST_MANUAL_TIME = 60 # Time to do the task manually in minutes
 EST_ENG_COST = 100 # Hourly rate of an engineer
 INITIAL_INVESTMENT = -200000 / 3 # Initial spread out over 3 years
